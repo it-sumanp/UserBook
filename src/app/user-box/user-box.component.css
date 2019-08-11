@@ -1,0 +1,8 @@
+.result-area{
+  height: 80vh;
+  overflow: scroll;
+}
+
+.shadow{
+  box-shadow: 0 2px 8px #d4d5d9;
+}

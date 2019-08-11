@@ -1,0 +1,12 @@
+<li id="item-{{index}}" [ngClass]="{'active': isActive}"
+  class="list-group-item list-group-item-action" (mouseenter)="onHoverListItem(index)">
+  <div class="font-weight-bold text-uppercase" [innerHTML]="user.id  | highlight : searchTerm"></div>
+  <div class="font-italic " [innerHTML]="user.name  | highlight : searchTerm"></div>
+  <div>
+    <span class="font-weight-light small-text" [innerHTML]="user.address  | highlight : searchTerm"></span>
+    &nbsp;
+    <span class="badge badge-secondary small-text" [innerHTML]="user.pincode  | highlight : searchTerm"></span>
+  </div>
+  <span *ngFor="let item of user.items" class="badge badge-success mr-1"
+    [innerHTML]="item  | highlight : searchTerm"></span>
+</li>

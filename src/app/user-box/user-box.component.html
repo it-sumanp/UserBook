@@ -1,0 +1,19 @@
+<div class="result-area shadow" *ngIf="isOpen">
+  <ul class="list-group list-group-flush" *ngIf="users.length">
+    <ng-container *ngFor="let user of users; let i = index">
+      <app-user-card
+        [user]="user"
+        [index]="i"
+        [isActive]="activeEleIndex === i"
+        [searchTerm]="searchTerm"
+        (infocus) = "onInfocus($event)"
+      >
+      </app-user-card>
+    </ng-container>
+  </ul>
+  <ul class="list-group list-group-flush" *ngIf="!users.length && isOpen">
+    <li class="list-group-item list-group-item-action">
+      <div class="font-weight-bold text-uppercase"> No Users Found</div>
+    </li>
+  </ul>
+</div>
